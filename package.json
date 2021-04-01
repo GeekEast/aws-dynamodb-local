@@ -1,0 +1,15 @@
+{
+  "name": "test-dynamodb-local",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "dynamodb-admin": "^4.0.1",
+    "env-cmd": "^10.1.0"
+  },
+  "scripts": {
+    "db:admin": "env-cmd -f .env.local dynamodb-admin",
+    "db:create": "docker-compose --env-file ./.env.local up",
+    "db:logs": "docker-compose --env-file ./.env.local logs -f"
+  }
+}

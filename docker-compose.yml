@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  dynamodb-local:
+    image: amazon/dynamodb-local
+    command: -jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath /data/dynamodb 
+    volumes:
+      - ./data/dynamodb:/data/dynamodb
+    ports:
+      - $DYNAMO_PORT:8000
