@@ -25,3 +25,4 @@ DYNAMO_ENDPOINT=http://localhost:8040
 
 ### References
 - [AWS Local DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.UsageNotes.html)
+- [DynamoDB ORM: Dynamoose](https://dynamoosejs.com/getting_started/Introduction)
