@@ -25,7 +25,6 @@ DYNAMO_ENDPOINT=http://localhost:8040
 ### DynamoDB
 - managed no-sql db service from aws
 - scalable, reliable
-- doesn't support table join at the DB level since it's schemaless
 
 #### Use Case
 <p align="center"><img style="display: block; width: 600px; margin: 0 auto;" src=img/2021-04-02-15-48-47.png alt="no image found"></p>
@@ -54,6 +53,23 @@ DYNAMO_ENDPOINT=http://localhost:8040
 Item 1 and Item 3 have the same `Partition Key`
 There is no limits on how many items can be stored in a table.
 
+#### Data Modeling
+
+- start with an ERD
+- define the access pattern
+- define the primary key and secondary indexes
+
+Forget about relational experience
+- normalization, duplicate data is allowed in dynamodb
+- joins, dynamodb doesn't support joins in database level
+- one entity type per table, dynamodb is schemaless.
+
+
+Principles:
+- **try to put everything in one table, even different thing**
+- **every query need a partition key**
+- **partition key should be as much unique as possible**
+- **no join for dynamodb since no-sql db is pre-joined db**
 
 ### Dynamoose Concepts
 - `schema`: table **data structure**
@@ -69,3 +85,4 @@ There is no limits on how many items can be stored in a table.
 - [Configure DynamoDB locally](https://dynamoosejs.com/getting_started/Configure#local)
 - [Core concepts of Amazon DynamoDB](https://medium.com/tensult/core-concepts-of-amazon-dynamodb-a265a3fc70a)
 - [Difference between AWS DynamoDB vs AWS DocumentDB vs MongoDB?](https://medium.com/@caseygibson_42696/difference-between-aws-dynamodb-vs-aws-documentdb-vs-mongodb-9cb026a94767)
+- [Build On DynamoDB | S1 E2 – Intro to NoSQL Data Modeling with Amazon DynamoDB](https://www.youtube.com/watch?v=Rmf8mrJ3X2s&ab_channel=AmazonWebServices)
