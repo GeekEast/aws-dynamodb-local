@@ -13,7 +13,7 @@
     "build": "rimraf dist && tsc -p tsconfig.build.json",
     "dev": "env-cmd -f .env.local ts-node --project tsconfig.json src/index.ts",
     "db:admin": "env-cmd -f .env.local dynamodb-admin",
-    "db:create": "docker-compose --env-file ./.env.local up",
+    "db:create": "docker-compose --env-file ./.env.local up -d",
     "db:logs": "docker-compose --env-file ./.env.local logs -f"
   },
   "dependencies": {
